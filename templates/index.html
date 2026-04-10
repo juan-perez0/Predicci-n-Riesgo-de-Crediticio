@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predicción de Riesgo Crediticio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a, #3b8a1e);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        header h1 {
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .card {
+            background: white;
+            margin-bottom: 25px;
+            padding: 28px;
+            border-radius: 14px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            border-left: 6px solid #3b8a1e;
+        }
+
+        .card h2 {
+            color: #3b8a1e;
+            margin-bottom: 15px;
+            font-size: 1.45rem;
+        }
+
+        .card p {
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .card ul, .card ol {
+            margin-left: 22px;
+            margin-top: 10px;
+        }
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #0f766e;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #dbeafe;
+            color: #3b8a1e;
+            padding: 8px 14px;
+            border-radius: 20px;
+            margin: 5px 8px 5px 0;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #e5e7eb;
+            color: #374151;
+            margin-top: 30px;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .card {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Predicción de Riesgo Crediticio</h1>
+        <p>Proyecto académico de minería de datos orientado al análisis financiero y predicción de incumplimiento de pago</p>
+        <p>Integrantes: Smith Sanchez - Juan Perez</p>
+    </header>
+
+    <div class="container">
+
+        <section class="card">
+            <h2>Introducción</h2>
+            <p>
+                El riesgo crediticio es uno de los principales factores que afectan la estabilidad financiera de entidades bancarias y organizaciones que otorgan créditos. 
+                En este proyecto se propone el uso de técnicas de minería de datos y aprendizaje supervisado para analizar información histórica de clientes y estimar 
+                la probabilidad de incumplimiento en el pago de sus obligaciones financieras.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Objetivo General</h2>
+            <p>
+                Desarrollar un modelo predictivo que permita identificar clientes con alto riesgo de incumplimiento de pago, con el fin de apoyar la toma de decisiones 
+                en procesos de evaluación crediticia.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Objetivos Específicos</h2>
+            <ul>
+                <li>Analizar el comportamiento financiero de los clientes a partir de datos históricos.</li>
+                <li>Identificar las variables con mayor influencia en el riesgo de incumplimiento.</li>
+                <li>Preparar los datos mediante procesos de limpieza e imputación de valores faltantes.</li>
+                <li>Aplicar un modelo de clasificación supervisada para predecir el incumplimiento de pago.</li>
+                <li>Evaluar el desempeño del modelo utilizando métricas como Accuracy, Recall y F1-Score.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Planteamiento del Problema</h2>
+            <p>
+                Las entidades financieras deben tomar decisiones precisas al momento de aprobar créditos, ya que una mala evaluación del cliente puede generar pérdidas 
+                económicas significativas. Por esta razón, resulta necesario implementar herramientas analíticas que permitan anticipar el riesgo asociado a cada cliente 
+                y mejorar la eficiencia del proceso de evaluación.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Tipo de Problema</h2>
+            <p>
+                Este proyecto corresponde a un problema de <span class="highlight">clasificación supervisada</span>, donde la variable objetivo es:
+            </p>
+            <p>
+                <span class="badge">default.payment.next.month</span>
+                <span class="badge">0 = paga</span>
+                <span class="badge">1 = no paga</span>
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>Datos a Utilizar</h2>
+            <p>El conjunto de datos incluirá variables financieras y demográficas como:</p>
+            <p>Ejemplo con dataset: Default of Credit Card Clients Dataset from Kaggle </p>
+            <ul>
+                <li><strong>LIMIT_BAL:</strong> monto del crédito otorgado.</li>
+                <li><strong>PAY_0, PAY_2, PAY_3...</strong> historial de pagos del cliente.</li>
+                <li><strong>BILL_AMT:</strong> montos de facturación.</li>
+                <li><strong>PAY_AMT:</strong> pagos realizados en periodos anteriores.</li>
+                <li><strong>Edad, educación y otras variables demográficas.</strong></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Metodología</h2>
+            <ol>
+                <li><strong>Entendimiento del negocio:</strong> identificación del problema financiero.</li>
+                <li><strong>Entendimiento de los datos:</strong> exploración y análisis descriptivo.</li>
+                <li><strong>Preparación de los datos:</strong> limpieza, transformación e imputación con KNN.</li>
+                <li><strong>Modelado:</strong> aplicación de algoritmos como Random Forest.</li>
+                <li><strong>Evaluación:</strong> análisis del desempeño con métricas de clasificación.</li>
+                <li><strong>Conclusiones:</strong> interpretación de resultados y utilidad del modelo.</li>
+            </ol>
+        </section>
+
+        <section class="card">
+            <h2>Importancia del Proyecto</h2>
+            <p>
+                Este proyecto tiene relevancia académica y práctica, ya que permite comprender cómo la minería de datos puede contribuir a la solución de problemas reales 
+                del sector financiero. Además, fortalece el uso de herramientas analíticas para la detección de patrones de riesgo y el apoyo a la toma de decisiones.
+            </p>
+        </section>
+
+
+
+    </div>
+
+    <footer>
+        Proyecto académico | Minería de Datos | Predicción de Riesgo Crediticio
+    </footer>
+
+</body>
+</html>
